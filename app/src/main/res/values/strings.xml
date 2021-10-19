@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">KotlinCrudMysql</string>
+    <string name="cariProduk">Cari Produk ... </string>
+</resources>

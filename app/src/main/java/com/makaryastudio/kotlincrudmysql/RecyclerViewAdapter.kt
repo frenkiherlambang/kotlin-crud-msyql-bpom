@@ -21,6 +21,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolde
 
     override fun onBindViewHolder(holder: RecyclerViewAdapter.MyViewHolder, position: Int) {
         holder.bind(productList[position])
+
     }
 
     override fun getItemCount(): Int {
@@ -40,5 +41,6 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolde
             Picasso.get().load(data.foto).into(imageViewFoto);
         }
     }
+
 
 }

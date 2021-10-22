@@ -35,4 +35,22 @@ class MainActivityViewModel: ViewModel() {
             }
         })
     }
+
+    fun searchProduct(searchText: String)
+    {
+        val retroInstance = RetroInstance.getRetroInstance().create(RetroService::class.java)
+        val call = retroInstance.searchProducts(searchText)
+        call.enqueue(object: Callback<ProductList> {
+            override fun onFailure(call: Call<ProductList>, t: Throwable) {
+                Log.e("errors", t.message.toString())
+            }
+
+            override fun onResponse(call: Call<ProductList>, response: Response<ProductList>) {
+                if(response.isSuccessful)
+                {
+                    recycleLiveData.postValue(response.body())
+                }
+            }
+        })
+    }
 }

@@ -3,7 +3,7 @@ package com.makaryastudio.kotlincrudmysql
 data class ProductList (val data: List<Product>)
 
 data class Product(
-    val id: Int?,
+    val id: String?,
     val judul: String?,
     val deskripsi: String?,
     val foto: String?
